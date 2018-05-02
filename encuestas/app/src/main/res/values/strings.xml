@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">encuestas</string>
+    <string name="facebook_app_id">151266922375124</string>
+    <string name="fb_login_protocol_scheme">fb151266922375124</string>
+    <string name="config_tit_encuestas">Creador de encuestas</string>
+    <string name="config_lab_tipo_encuesta">Tipo de Encuesta:</string>
+    <string name="config_lab_nombre_encuesta">Nombre:</string>
+    <string name="config_lab_num_pre_encuesta">Número de preguntas:</string>
+    <string name="config_lab_num_res_encuesta">Número de respuestas</string>
+    <string name="config_crear_encuesta">Crear Encuesta</string>
+    <string-array name="tiposencuenta">
+        <item>Respuesta Cerrada</item>
+        <item>Respuesta Abierta</item>
+    </string-array>
+</resources>

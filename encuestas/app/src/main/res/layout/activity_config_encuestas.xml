@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.juanpablo.encuestas.config_encuestas"
+    android:layout_margin="40dp">
+    <TextView
+        android:id="@+id/config_tit_encuestas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/config_tit_encuestas"
+        android:textSize="22sp"/>
+    <TextView
+        android:layout_marginTop="20dp"
+        android:id="@+id/config_lab_nombre_encuesta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/config_tit_encuestas"
+        android:text="@string/config_lab_nombre_encuesta"/>
+    <EditText
+        android:id="@+id/config_cam_nom_encuesta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/config_lab_nombre_encuesta"
+        android:layout_below="@id/config_tit_encuestas"/>
+    <TextView
+        android:id="@+id/config_lab_tipo_encuesta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/config_lab_nombre_encuesta"
+        android:text="@string/config_lab_tipo_encuesta"/>
+    <Spinner
+        android:id="@+id/config_spinner_tipo_encuesta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/config_lab_tipo_encuesta"
+        android:layout_below="@id/config_lab_nombre_encuesta"></Spinner>
+    <TextView
+
+        android:id="@+id/config_lab_num_pre_encuesta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/config_spinner_tipo_encuesta"
+        android:text="@string/config_lab_num_pre_encuesta"/>
+    <EditText
+
+        android:id="@+id/config_cam_num_pre_encuesta"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_toRightOf="@id/config_lab_num_pre_encuesta"
+        android:layout_below="@id/config_spinner_tipo_encuesta"
+        android:layout_alignBaseline="@id/config_lab_num_pre_encuesta"/>
+    <TextView
+
+        android:id="@+id/config_lab_num_res_encuesta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/config_lab_num_pre_encuesta"
+        android:text="@string/config_lab_num_res_encuesta"/>
+    <EditText
+
+        android:id="@+id/config_cam_num_res_encuesta"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_toRightOf="@id/config_lab_num_res_encuesta"
+        android:layout_below="@id/config_cam_num_pre_encuesta" />
+    <Button
+        android:id="@+id/config_crear_encuesta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/config_lab_num_res_encuesta"
+        android:layout_centerHorizontal="true"
+        android:text="@string/config_crear_encuesta"/>
+
+
+
+
+
+    
+
+</RelativeLayout>
