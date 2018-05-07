@@ -1,0 +1,23 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.juanpablo.encuestas.crear_enc_abierta"
+    android:layout_margin="40dp">
+    <TextView
+        android:id="@+id/c_enc_abierta_tit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="@string/c_enc_abierta_tit"
+        android:layout_centerHorizontal="true"/>
+    <TextView
+        android:layout_marginTop="10dp"
+        android:id="@+id/c_enc_abierta_lab_preguntas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/c_enc_abierta_lab_preguntas"
+        android:layout_below="@id/c_enc_abierta_tit"/>
+
+
+</RelativeLayout>
