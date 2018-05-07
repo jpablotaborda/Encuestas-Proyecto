@@ -5,26 +5,32 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class config_encuestas extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+import com.example.juanpablo.encuestas.Modelos.Encuesta;
+
+public class config_encuestas extends AppCompatActivity implements AdapterView.OnItemSelectedListener, View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_config_encuestas);
+        //configurando componentes
         Spinner tipoencuesta= (Spinner) findViewById(R.id.config_spinner_tipo_encuesta);
         ArrayAdapter<CharSequence> adapter= ArrayAdapter.createFromResource(this,R.array.tiposencuenta,android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         tipoencuesta.setAdapter(adapter);
-        tipoencuesta.setOnItemSelectedListener(this);
-        TextView lab_num_res= (TextView) findViewById(R.id.config_lab_num_res_encuesta);
-        EditText cam_num_res= (EditText) findViewById(R.id.config_cam_num_res_encuesta);
-        lab_num_res.setVisibility(View.INVISIBLE);
-        cam_num_res.setVisibility(View.INVISIBLE);
+        //tipoencuesta.setOnItemSelectedListener(this);
+
+        Button boton_crear_encuesta= (Button) findViewById(R.id.config_bot_crear_encuesta);
+        boton_crear_encuesta.setOnClickListener(this);
+        //creando encuesta
+        Encuesta encuesta= new Encuesta();
+
     }
 
 
@@ -43,6 +49,11 @@ public class config_encuestas extends AppCompatActivity implements AdapterView.O
 
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
+
+    }
+
+    @Override
+    public void onClick(View view) {
 
     }
 }

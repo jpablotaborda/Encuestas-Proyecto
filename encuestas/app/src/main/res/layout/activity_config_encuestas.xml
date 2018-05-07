@@ -38,40 +38,12 @@
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/config_lab_tipo_encuesta"
         android:layout_below="@id/config_lab_nombre_encuesta"></Spinner>
-    <TextView
 
-        android:id="@+id/config_lab_num_pre_encuesta"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/config_spinner_tipo_encuesta"
-        android:text="@string/config_lab_num_pre_encuesta"/>
-    <EditText
-
-        android:id="@+id/config_cam_num_pre_encuesta"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_toRightOf="@id/config_lab_num_pre_encuesta"
-        android:layout_below="@id/config_spinner_tipo_encuesta"
-        android:layout_alignBaseline="@id/config_lab_num_pre_encuesta"/>
-    <TextView
-
-        android:id="@+id/config_lab_num_res_encuesta"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/config_lab_num_pre_encuesta"
-        android:text="@string/config_lab_num_res_encuesta"/>
-    <EditText
-
-        android:id="@+id/config_cam_num_res_encuesta"
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:layout_toRightOf="@id/config_lab_num_res_encuesta"
-        android:layout_below="@id/config_cam_num_pre_encuesta" />
     <Button
-        android:id="@+id/config_crear_encuesta"
+        android:id="@+id/config_bot_crear_encuesta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/config_lab_num_res_encuesta"
+        android:layout_below="@id/config_lab_tipo_encuesta"
         android:layout_centerHorizontal="true"
         android:text="@string/config_crear_encuesta"/>
 

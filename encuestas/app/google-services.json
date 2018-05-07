@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "321159059511",
+    "firebase_url": "https://encuestas-aa520.firebaseio.com",
+    "project_id": "encuestas-aa520",
+    "storage_bucket": "encuestas-aa520.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:321159059511:android:44cf6c9b994cc6b5",
+        "android_client_info": {
+          "package_name": "com.example.juanpablo.encuestas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "321159059511-nllgsqb3718o03d5lr8ubs78ga507knj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.juanpablo.encuestas",
+            "certificate_hash": "c3fc125d9b860200640464a4ccc3e5dc4b8a15e6"
+          }
+        },
+        {
+          "client_id": "321159059511-1saoc398p4modajqhfj5vjheje9af1tv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqnf9pnsqE6VmAG6NEF-Pj4jHc8BEYeuE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "321159059511-1saoc398p4modajqhfj5vjheje9af1tv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

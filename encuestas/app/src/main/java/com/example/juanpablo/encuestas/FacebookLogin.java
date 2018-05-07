@@ -5,96 +5,64 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 import com.facebook.*;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 
-public class FacebookLogin extends FragmentActivity
+public class FacebookLogin extends Fragment
 {
     private TextView tvfirst_name, tvlast_namee, tvfull_name, tvEmail;
-    private CallbackManager callbackManager;
-    LoginButton login_button;
-    String email,name,first_name,last_name;
+    private View v;
+    private CallbackManager mCallbackManager;
 
+    @Nullable
     @Override
-    public void onCreate(Bundle savedInstanceState)
-    {
-        super.onCreate(savedInstanceState);
-        FacebookSdk.sdkInitialize(this.getApplicationContext());
-        callbackManager = CallbackManager.Factory.create();
-
-        setContentView(R.layout.fragment_facebooklogin);
-
-        tvfirst_name        = (TextView) findViewById(R.id.first_name);
-        tvlast_namee        = (TextView) findViewById(R.id.last_name);
-        tvfull_name         = (TextView) findViewById(R.id.full_name);
-        tvEmail             = (TextView) findViewById(R.id.email);
-        login_button        = (LoginButton) findViewById(R.id.login_button);
-
-        login_button.setReadPermissions(Arrays.asList("public_profile","email"));
-        login_button.registerCallback(callbackManager, new FacebookCallback<LoginResult>()
-        {
-            @Override
-            public void onSuccess(LoginResult loginResult)
-            {
-                login_button.setVisibility(View.GONE);
-
-                GraphRequest graphRequest   =   GraphRequest.newMeRequest(loginResult.getAccessToken(), new GraphRequest.GraphJSONObjectCallback()
-                {
-                    @Override
-                    public void onCompleted(JSONObject object, GraphResponse response)
-                    {
-                        Log.d("JSON", ""+response.getJSONObject().toString());
-
-                        try
-                        {
-                            email       =   object.getString("email");
-                            name        =   object.getString("name");
-                            first_name  =   object.optString("first_name");
-                            last_name   =   object.optString("last_name");
-
-                            tvEmail.setText(email);
-                            tvfirst_name.setText(first_name);
-                            tvlast_namee.setText(last_name);
-                            tvfull_name.setText(name);
-                            LoginManager.getInstance().logOut();
-                        }
-                        catch (JSONException e)
-                        {
-                            e.printStackTrace();
-                        }
-                    }
-                });
-
-                Bundle parameters = new Bundle();
-                parameters.putString("fields", "id,name,first_name,last_name,email");
-                graphRequest.setParameters(parameters);
-                graphRequest.executeAsync();
-            }
-
-            @Override
-            public void onCancel()
-            {
-
-            }
-
-            @Override
-            public void onError(FacebookException exception)
-            {
-
-            }
-        });
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        v= inflater.inflate(R.layout.fragment_facebooklogin,container,false);
+        return v;
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data)
-    {
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        // Initialize Facebook Login button
+        mCallbackManager = CallbackManager.Factory.create();
+        LoginButton loginButton = (LoginButton) v.findViewById(R.id.login_button    );
+        loginButton.setReadPermissions("email", "public_profile");
+        loginButton.registerCallback(mCallbackManager, new FacebookCallback<LoginResult>() {
+            @Override
+            public void onSuccess(LoginResult loginResult) {
+                Log.d("Facebooklogin", "facebook:onSuccess:" + loginResult);
+
+            }
+
+            @Override
+            public void onCancel() {
+                Log.d("Facebooklogin", "facebook:onCancel");
+
+            }
+
+            @Override
+            public void onError(FacebookException error) {
+                Log.d("Facebooklogin", "facebook:onError", error);
+                // ...
+            }
+        });
+
+    }
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        mCallbackManager.onActivityResult(requestCode, resultCode, data);
         super.onActivityResult(requestCode, resultCode, data);
-        callbackManager.onActivityResult(requestCode, resultCode, data);
     }
 }
