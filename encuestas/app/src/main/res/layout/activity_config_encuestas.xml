@@ -37,15 +37,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/config_lab_tipo_encuesta"
-        android:layout_below="@id/config_lab_nombre_encuesta"></Spinner>
+        android:layout_below="@id/config_lab_nombre_encuesta"
+        android:textColor="#000000"></Spinner>
 
     <Button
         android:id="@+id/config_bot_crear_encuesta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/config_lab_tipo_encuesta"
+        android:layout_below="@id/config_spinner_tipo_encuesta"
         android:layout_centerHorizontal="true"
-        android:text="@string/config_crear_encuesta"/>
+        android:text="@string/config_crear_encuesta"
+        />
 
 
 

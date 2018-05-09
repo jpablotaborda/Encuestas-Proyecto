@@ -39,10 +39,12 @@ public class FacebookLogin extends Fragment
         mCallbackManager = CallbackManager.Factory.create();
         LoginButton loginButton = (LoginButton) v.findViewById(R.id.login_button    );
         loginButton.setReadPermissions("email", "public_profile");
+        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fram_frag_facebooklogin,new config_encuestas()).addToBackStack(null).commit();
         loginButton.registerCallback(mCallbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
                 Log.d("Facebooklogin", "facebook:onSuccess:" + loginResult);
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fram_frag_facebooklogin,new config_encuestas()).addToBackStack(null).commit();
 
             }
 

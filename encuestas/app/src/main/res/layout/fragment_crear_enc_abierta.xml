@@ -20,4 +20,5 @@
         android:layout_below="@id/c_enc_abierta_tit"/>
 
 
+
 </RelativeLayout>
