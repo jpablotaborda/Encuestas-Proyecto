@@ -42,8 +42,7 @@ public class config_encuestas extends Fragment implements View.OnClickListener {
 
         Button boton_crear_encuesta= (Button) v.findViewById(R.id.config_bot_crear_encuesta);
         boton_crear_encuesta.setOnClickListener(this);
-        //creando encuesta
-        Encuesta encuesta= new Encuesta();
+
     }
 
     @Override

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.juanpablo.encuestas.cardpregunta">
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp">
+        <TextView
+            android:id="@+id/card_pregunta_lab_pregunta"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="6"/>
+        <Button
+            android:id="@+id/card_pregunta_bot_borrar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/cardbot_borrar"
+            android:layout_weight="4"/>
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

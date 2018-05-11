@@ -31,8 +31,7 @@
                 <data android:scheme="@string/fb_login_protocol_scheme" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".config_encuestas"></activity>
+        <activity android:name=".config_encuestas" />
         <activity android:name=".Menuprincipal">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -40,6 +39,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".cardpregunta"></activity>
     </application>
 
 </manifest>
