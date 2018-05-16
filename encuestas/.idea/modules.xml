@@ -3,11 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://C:\Users\Juan Pablo\Documents\Encuestas-Proyecto\encuestas\app\app.iml" filepath="C:\Users\Juan Pablo\Documents\Encuestas-Proyecto\encuestas\app\app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/encuestas.iml" filepath="$PROJECT_DIR$/encuestas.iml" />
-      <module fileurl="file://$PROJECT_DIR$/encuestas.iml" filepath="$PROJECT_DIR$/encuestas.iml" />
-      <module fileurl="file://C:\Users\Juan Pablo\Documents\Encuestas-Proyecto\encuestas\encuestas.iml" filepath="C:\Users\Juan Pablo\Documents\Encuestas-Proyecto\encuestas\encuestas.iml" />
     </modules>
   </component>
 </project>
