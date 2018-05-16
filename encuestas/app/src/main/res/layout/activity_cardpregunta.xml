@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.juanpablo.encuestas.cardpregunta">
+    tools:context="com.example.juanpablo.encuestas.cardpregunta"
+    android:id="@+id/card_pregunta">
     <LinearLayout
 
         android:layout_width="match_parent"

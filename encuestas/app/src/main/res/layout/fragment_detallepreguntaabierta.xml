@@ -1,13 +1,30 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.juanpablo.encuestas.detallepreguntaabierta">
+    tools:context="com.example.juanpablo.encuestas.detallepreguntaabierta"
+    android:layout_margin="40dp">
 
-    <!-- TODO: Update blank fragment layout -->
+
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+        android:id="@+id/det_pregabierta_tit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/det_pregabierta_tit"
+        android:textSize="20sp"/>
+    <TextView
+        android:id="@+id/det_pregabierta_lab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/det_pregabierta_lab"
+        android:layout_below="@id/det_pregabierta_tit"/>
+    <TextView
+        android:id="@+id/det_pregabierta_enunciado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/det_pregabierta_lab"
+        android:layout_below="@id/det_pregabierta_tit"/>
+
+</RelativeLayout>

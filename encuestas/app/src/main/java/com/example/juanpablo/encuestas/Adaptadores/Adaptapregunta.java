@@ -1,6 +1,9 @@
 package com.example.juanpablo.encuestas.Adaptadores;
 
 import android.content.Context;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,8 +13,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.juanpablo.encuestas.Modelos.Pregunta;
+import com.example.juanpablo.encuestas.Modelos.Respuesta;
 import com.example.juanpablo.encuestas.R;
+import com.example.juanpablo.encuestas.detallepreguntaabierta;
+import com.example.juanpablo.encuestas.detallepreguntacerrada;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -60,6 +67,7 @@ public class Adaptapregunta extends RecyclerView.Adapter<Adaptapregunta.pregunta
             bot_borrar=(Button)view.findViewById(R.id.card_pregunta_bot_borrar);
             bot_borrar.setOnClickListener(this);
             this.adaptapro=adaptapregunta;
+            view.setOnClickListener(this);
 
 
 
@@ -69,8 +77,28 @@ public class Adaptapregunta extends RecyclerView.Adapter<Adaptapregunta.pregunta
         @Override
         public void onClick(View view) {
 
-            adaptapro.lista_preguntas.remove(getPosition());
-            adaptapro.notifyDataSetChanged();
+            switch (view.getId()){
+                case R.id.card_pregunta_bot_borrar:
+                    adaptapro.lista_preguntas.remove(getPosition());
+                    adaptapro.notifyDataSetChanged();
+                    break;
+                case R.id.card_pregunta:
+                    Bundle contenedor= new Bundle();
+                    contenedor.putString(adaptapro.lista_preguntas.get(getPosition()).getEnunciado(),"enunciado");
+                    contenedor.putParcelableArrayList(adaptapro.lista_preguntas.get(getPosition()).getCjto_opciones(),"conjunto_respuestas");
+                    Fragment a_reemplazar= null;
+                    if(lista_res==null){
+                        a_reemplazar= new detallepreguntaabierta();
+                    }
+                    else{
+                        a_reemplazar= new detallepreguntacerrada();
+                    }
+                    a_reemplazar.setArguments(contenedor);
+
+                    ((AppCompatActivity)contexto).getSupportFragmentManager().beginTransaction().replace(R.id.fram_frag_facebooklogin,a_reemplazar).addToBackStack(null).commit();
+                    break;
+            }
+
 
         }
     }

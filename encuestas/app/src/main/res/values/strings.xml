@@ -18,4 +18,6 @@
     <string name="c_enc_abierta_tit">Creador de encuesta abierta</string>
     <string name="c_enc_abierta_lab_preguntas">Preguntas:</string>
     <string name="cardbot_borrar">borrar</string>
+    <string name="det_pregabierta_lab">Enunciado:</string>
+    <string name="det_pregabierta_tit">Detalle de la pregunta</string>
 </resources>
